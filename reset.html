@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Reset Password | Amora</title>
+  </head>
+  <body>
+    <div id="success-msg" class="success-message">Password reset successfully!</div>
+    <div class="container">
+      <div class="container__left">
+        <img src="assets/bg.png" alt="lovebirds" />
+        <h2>New Password</h2>
+        <p>
+          Secure your account with a strong new password.
+        </p>
+      </div>
+      <div class="container__right">
+        <div class="content">
+          <h1 class="logo">Amora</h1>
+          <p class="header">Reset Password</p>
+          <form onsubmit="event.preventDefault(); showSuccess();">
+            <div class="input__group">
+              <input type="password" required />
+              <label>New Password</label>
+            </div>
+            <div class="input__group">
+              <input type="password" required />
+              <label>Confirm Password</label>
+            </div>
+            <button>Reset Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      function showSuccess() {
+        const msg = document.getElementById('success-msg');
+        msg.classList.add('show');
+        setTimeout(() => {
+          msg.classList.remove('show');
+          window.location.href = 'index.html';
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
